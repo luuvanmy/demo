@@ -1,0 +1,13 @@
+body{
+  background: #ecf0f5;
+   font-family:Helvetica,Arial,sans-serif;
+   @include font-page($font-Roboto-normal);
+	color: $text;
+	background: #ecf0f5;
+   h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+      font-family: Roboto ,Helvetica,Arial,sans-serif;
+   }
+}
+.bg-light{
+  background-color: $light3;
+}

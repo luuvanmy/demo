@@ -1,0 +1,277 @@
+
+@media (max-width: 992px) {
+	.sm-text-left {
+		text-align: left;
+	}
+	.sm-text-right {
+		text-align: right;
+	}
+	.sm-text-center {
+		text-align: center;
+	}
+}
+@media (max-width: 768px) {
+	.xs-text-left {
+		text-align: left;
+	}
+	.xs-text-right {
+		text-align: right;
+	}
+	.xs-text-center {
+		text-align: center;
+	}
+}
+@media (max-width: 992px) {
+	.container {
+		width: 100%;
+	}
+}
+textarea {
+	resize: vertical;
+}
+.dropdown{
+	.dropdown-menu{
+		border-radius: 0;
+		min-width: 100%;
+		li{
+			&.divider{
+				margin: 0;
+			}
+			a{
+				margin: 0;
+				border-radius: 0;
+				display: block;
+			}
+		}
+	}
+}
+.dropdown-action {
+	display: inline-block;
+	margin-left: 10px;
+	.dropdown-menu {
+		top: auto;
+		bottom: 100%;
+	}
+}
+.nav-tabs > li > a {
+	border-radius: 0;
+}
+.text-content img {
+	max-width: 100%;
+	height: auto;
+}
+.no-border {
+	border: none !important;
+}
+.no-shadow {
+	box-shadow: none !important;
+}
+
+.inline-block {
+	display: inline-block;
+	vertical-align: middle;
+}
+.position{
+	&-relative{
+		position: relative;
+	}
+	&-absolute{
+		position: absolute;
+	}
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.user-select-none {
+	user-select: none;
+}
+
+.disabled-link {
+	pointer-events: none;
+	cursor: default;
+	opacity: 0.6;
+}
+
+.pointer-cursor {
+	cursor: pointer;
+}
+
+.text-capitalize {
+	text-transform: capitalize;
+}
+.text-uppercase {
+	text-transform: uppercase;
+}
+.text-lowercase{
+	text-transform: lowercase;
+}
+.text-capitalize{
+	text-transform: capitalize;
+}
+.flex-center{
+	@include flex-center;
+}
+.material-icons {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+}
+.no-mg{margin: 0 !important;}
+.no-pd{padding: 0 !important;}
+.no-mg-left{margin-left: 0 !important;}
+.no-mg-right{margin-right: 0 !important;}
+.no-mg-top{margin-top: 0 !important;}
+.no-mg-bottom{margin-bottom: 0 !important;}
+.no-pd-left{padding-left: 0 !important;}
+.no-pd-right{padding-right: 0 !important;}
+.no-pd-top{padding-top: 0 !important;}
+.no-pd-bottom{padding-bottom: 0 !important;}
+
+@for $i from 1 through 20 {
+	.mg-top-#{$i*5} {
+		margin-top: #{$i * 5}px !important;
+	}
+	.mg-bottom-#{$i*5} {
+		margin-bottom: #{$i * 5}px !important;
+	}
+	.mg-left-#{$i*5} {
+		margin-left: #{$i * 5}px !important;
+	}
+	.mg-right-#{$i*5} {
+		margin-right: #{$i * 5}px !important;
+	}
+	.pd-top-#{$i*5} {
+		padding-top: #{$i * 5}px !important;
+	}
+	.pd-bottom-#{$i*5} {
+		padding-bottom: #{$i * 5}px !important;
+	}
+	.pd-left-#{$i*5} {
+		padding-left: #{$i * 5}px !important;
+	}
+	.pd-right-#{$i*5} {
+		padding-right: #{$i * 5}px !important;
+	}
+	.pd-#{$i*5} {
+		padding: #{$i * 5}px !important;
+	}
+	.mg-#{$i*5} {
+		margin: #{$i * 5}px !important;
+	}
+	.w-#{$i*5} {
+		width: #{$i * 5}px !important;
+	}
+}
+
+@for $j from 1 through 100 {
+	.w-#{$j} {
+		width: #{$j}% !important;
+	}
+}
+.row-flex{
+	@include flex;
+	.col-flex{
+		height: 100%;
+	}
+}
+.text{
+	&-warning{
+		color:$warning;
+	}
+	&-danger{
+		color:$danger;
+	}
+	&-info{
+		color:$info;
+	}
+	&-primary{
+		color:$primary;
+	}
+	&-success{
+		color:$success;
+	}
+	&-white{
+		color:#fff;
+	}
+}
+.label , .bg ,.panel{
+	&-warning{
+		background:$warning;
+	}
+	&-danger{
+		background:$danger;
+	}
+	&-info{
+		background:$info;
+	}
+	&-primary{
+		background:$primary;
+	}
+	&-success{
+		background:$success;
+	}
+	&-white{
+		background: #fff;
+	}
+}
+.label{
+	border-radius: 0;
+	&-lg{
+		padding: 6px 12px;
+		font-size: 14px;
+	}
+}
+
+.bs-callout {
+	padding: 20px;
+	margin: 20px 0;
+	border: 1px solid #eee;
+	border-left-width: 5px;
+	h4{
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
+	p:last-child{
+		margin-bottom: 0;
+	}
+	code{
+		border-radius: 3px;
+	}
+	&-danger{
+		border-left-color: $danger;
+		h4{
+			color:$danger;
+		}
+	}
+	&-info{
+		border-left-color: $info;
+		h4{
+			color:$info;
+		}
+	}
+	&-primary{
+		border-left-color: $primary;
+		h4{
+			color:$primary;
+		}
+	}
+	&-warning{
+		border-left-color: $warning;
+		h4{
+			color:$warning;
+		}
+	}
+	&-success{
+		border-left-color: $success;
+		h4{
+			color:$success;
+		}
+	}
+}
+.bs-callout + .bs-callout {
+	margin-top: -5px;
+}

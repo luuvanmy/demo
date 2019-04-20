@@ -1,0 +1,30 @@
+@import "sass/static/_author.scss";
+
+//import font
+@import "sass/static/_font.scss";
+// mixin
+@import "sass/static/_mixin.scss";
+// import color variable
+@import "sass/static/_variables.scss";
+// import animation
+@import "sass/static/_animation.scss";
+// import style for plugin
+@import "sass/static/_plugin.scss";
+@import "sass/static/_btn.scss";
+// custom class
+@import "sass/static/_class.scss";
+// default variables
+@import "sass/static/_default.scss";
+// custom style
+@import "sass/partial/_body.scss";
+@import "sass/partial/_header.scss";
+@import "sass/partial/_wrapper.scss";
+@import "sass/partial/_modal.scss";
+@import "sass/partial/_card_box.scss";
+@import "sass/partial/_common.scss";
+@import "sass/partial/_breadcrumb.scss";
+@import "sass/partial/_sticky.scss";
+@import "sass/partial/_checkbox-radios.scss";
+@import "sass/partial/_table.scss";
+@import "sass/partial/_report_chart.scss";
+@import "sass/partial/_report_list.scss";

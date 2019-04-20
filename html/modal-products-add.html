@@ -1,0 +1,162 @@
+<div class="modal-dialog modal-lg-80 modal-products-add" role="document">
+   <div class="modal-content">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <h4 class="modal-title" id="myModalLabel"><span class="ion-ios-browsers-outline"></span>&nbsp; Tạo mới sản phẩm</h4>
+      </div>
+      <div class="modal-body">
+         <div class="row row-flex">
+            <div class="col-xs-12 right-block">
+               <div class="row head-info">
+                  <div class="col-xs-3">
+                     <div class="box-upload-image">
+                        <span class="ion-image"></span>
+                        <p>Chọn tập tin hình ảnh hoặc kéo vào đây để cập nhật ảnh.</p>
+                     </div>
+                  </div>
+                  <div class="col-xs-9">
+                     <input type="text" class="title-input form-control mg-bottom-20" placeholder="Nhập tên sản phẩm">
+                     <textarea class="form-control description-input mg-bottom-15" rows="3" placeholder="Nhập mô tả ngắn về sản phẩm ..."></textarea>
+                     <p><input type="checkbox" checked="checked"> được phép bán sản phẩm này cho khách hàng</p>
+                     <p><input type="checkbox" checked="checked"> được phép nhập sản phẩm này từ nhà cung cấp</p>
+                     <p><input type="checkbox" checked="checked"> sản phẩm này có hạn sử dụng tách biệt bằng lô hàng</p>
+                  </div>
+               </div>
+               <div class="block-info">
+                 <!-- Nav tabs -->
+                 <ul class="nav nav-tabs" role="tablist">
+                   <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Thông tin chính</a></li>
+                   <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Nhà cung cấp</a></li>
+                   <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Giá bán</a></li>
+                   <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Thông tin khác</a></li>
+                 </ul>
+                 <!-- Tab panes -->
+                 <div class="tab-content">
+                   <div role="tabpanel" class="tab-pane history-order active" id="home">
+                        <div class="row mg-bottom-20 mg-top-20">
+                           <div class="col-xs-2">
+                              <p>Mã SKU</p>
+                              <input type="text" class="form-control">
+                           </div> 
+                           <div class="col-xs-2">
+                              <p>Mã Barcode (Internal)</p>
+                              <input type="text" class="form-control">
+                           </div>
+                           <div class="col-xs-2">
+                              <p>Mã Barcode (Supplier)</p>
+                              <input type="text" class="form-control">
+                           </div>
+                           <div class="col-xs-3">
+                              <p>Loại sản phẩm</p>
+                              <select class="form-control">
+                                 <option value="">Sản phẩm đơn</option>
+                                 <option value="">Sản phẩm biến thể</option>
+                                 <option value="">Sản phẩm nhóm</option>
+                                 <option value="">Sản phẩm gói</option>
+                                 <option value="">Dịch vụ</option>
+                              </select>
+                           </div> 
+                           <div class="col-xs-3">
+                              <p>Danh mục sản phẩm</p>
+                              <select class="form-control">
+                                 <option value="">Danh mục sản phẩm #1</option>
+                                 <option value="">Danh mục sản phẩm #2</option>
+                                 <option value="">Danh mục sản phẩm #3</option>
+                                 <option value="">Danh mục sản phẩm #4</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="row mg-bottom-20">
+                           <div class="col-xs-2">
+                              <p>Dài (cm)</p>
+                              <input type="text" class="form-control">
+                           </div>
+                           <div class="col-xs-2">
+                              <p>Rộng (cm)</p>
+                              <input type="text" class="form-control">
+                           </div>
+                           <div class="col-xs-2">
+                              <p>Cao (cm)</p>
+                              <input type="text" class="form-control">
+                           </div>
+                           <div class="col-xs-3">
+                              <p>Tổng trọng lượng</p>
+                              <div class="input-group">
+                                 <input type="text" class="form-control" aria-label="...">
+                                 <div class="input-group-btn">
+                                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">kg <span class="caret"></span></button>
+                                   <ul class="dropdown-menu">
+                                     <li><a href="#">kg</a></li>
+                                     <li><a href="#">100gr</a></li>
+                                     <li><a href="#">gram</a></li>
+                                     <li><a href="#">ml</a></li>
+                                     <li><a href="#">100ml</a></li>
+                                   </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xs-3">
+                              <p>Đơn vị tính sản phẩm</p>
+                              <select class="form-control">
+                                 <option value="">Sản phẩm</option>
+                                 <option value="">Cái</option>
+                                 <option value="">Chiếc</option>
+                                 <option value="">...</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-xs-3">
+                              <p>Sản phẩm có quản lý tồn kho ?</p>
+                              <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-info">Có quản lý</button>
+                                <button type="button" class="btn btn-default">Không quản lý</button>
+                              </div>
+                           </div>
+                           <div class="col-xs-3">
+                              <p>Tình trạng hàng hóa ?</p>
+                              <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-info">Còn hàng</button>
+                                <button type="button" class="btn btn-default">Hết hàng</button>
+                              </div>
+                           </div>
+                           <div class="col-xs-3">
+                              <div class="row">
+                                 <div class="col-xs-6">
+                                    <p>Số thực tế</p>
+                                    <input type="number" class="form-control" value="1">
+                                 </div>                        
+                                 <div class="col-xs-6">
+                                    <p>Số có thể bán</p>
+                                    <input type="number" class="form-control" value="1">
+                                 </div>   
+                              </div>
+                           </div>
+                           <div class="col-xs-3">
+                              <div class="col-xs-12">
+                                    <label style="font-weight: normal;" class="mg-top-15"><input type="radio" name="default-import-warehouse" checked="checked"> Nhập số này vào kho mặc định</label>
+                                    <label style="font-weight: normal;" class="mg-top-5"><input type="radio" name="default-import-warehouse"> Nhập số này vào kho chỉ định</label>
+                                 </div>
+                           </div>
+                        </div>
+                   </div>
+                   <div role="tabpanel" class="tab-pane history-consulting" id="profile">
+                        <div class="row">
+                           
+                        </div>
+                   </div>
+                   <div role="tabpanel" class="tab-pane history-sendsms" id="messages">
+                     
+                   </div>
+                   <div role="tabpanel" class="tab-pane history-sendmessage" id="settings">...</div>
+                 </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">&times; &nbsp;Đóng</button>
+         <button type="button" class="btn btn-primary"><i class=" fa fa-pencil"></i>&nbsp; Cập nhật</button>
+      </div>
+   </div>
+</div>

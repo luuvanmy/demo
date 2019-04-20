@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Xử lý đơn hàng</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+	<!-- plugin -->
+	<link rel="stylesheet" href="resources/vendor/bootstrap/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="resources/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="resources/vendor/ionicons/css/ionicons.min.css">
+	<link rel="stylesheet" href="resources/vendor/daterangepicker/daterangepicker.css">
+	<!-- wave Css -->
+	<link rel="stylesheet" href="resources/vendor/waves/waves.min.css" />
+	<link rel="stylesheet" href="resources/vendor/select2/css/select2.min.css">
+	<!-- custom -->
+	<link rel="stylesheet" href="resources/css/module.css">
+	<link rel="stylesheet" href="resources/css/styles.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-menu">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed menu-toggle" >
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand logo  hidden-xs" href="index.html">
+					<span class="logo-icon">
+						<img src="resources/images/logo/logo-1.png" alt="" class="img-responsive pull-left img-logo">
+					</span>
+					<span class="logo-text">
+						<h2>POLARIS</h2>
+						<p>Your success - Our mission</p>
+					</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="account">
+						<div class="dropdown">
+							<img src="resources/images/thumnails/50x50.png" data-toggle="dropdown"  alt="" class="img-responsive img-circle">
+							<a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Xin chào <b>Admin</b><br><small>Web developers</small> <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Thông tin tài khoản</a></li>
+								<li><a href="#">Lịch sử hoạt động</a></li>
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-center">
+					<li class="active"><a href="" ><i class="material-icons">work</i> &nbsp; <span>Quản lý bán hàng</span></a>
+						<ul>
+							<li ><a href="index.html" >Đơn hàng</a></li>
+							<li><a href="customers.html">Khách hàng</a></li>
+							<li><a href="#">Chính sách giá bán</a></li>
+							<li><a href="report-sales.html">Báo cáo</a></li>
+							<li><a href="#">Cấu hình chung</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="material-icons">account_balance</i> &nbsp; Quản lý kho hàng</a>
+						<ul>
+							<li><a href="products.html" class="active">Sản phẩm</a></li>
+							<li><a href="export-warehouses.html">Xuất kho</a></li>
+							<li><a href="import-warehouses.html">Nhập kho</a></li>
+							<li><a href="export-warehouses.html">Lưu chuyển kho</a></li>
+							<li><a href="report-warehouses.html">Báo cáo xuất/nhập tồn</a></li>
+							<li><a href="check-warehouses.html">Kiểm kho</a></li>
+							<li><a href="#">Cấu hình chung</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="material-icons">supervisor_account</i> &nbsp; Quản lý nhân sự</a>
+						<ul>
+							<li><a href="#" class="active">Nhân sự / nhóm nhân sự</a></li>
+							<li><a href="#">Chấm công</a></li>
+							<li><a href="#">Chính sách lương/thưởng</a></li>
+							<li><a href="#">Chính sách KPI</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="material-icons">help_outline</i> &nbsp; Hỗ trợ sử dụng</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="content report-sales report-warehouses mg-top-70">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="page-title-box">
+						<div class="btn-group pull-right">
+							<ol class="breadcrumb hide-phone p-0 m-0">
+								<li class="breadcrumb-item"><a href="#">Quản lý kho hàng</a></li>
+								<li class="breadcrumb-item active">Báo cáo xuất/nhập tồn</li>
+							</ol>
+						</div>
+						<h4 class="page-title pd-top-10" >Báo cáo tồn</h4>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="block chart-box">
+						<h4 class="box-title-chart">Giá trị tồn kho </h4>
+						<div class="row">
+							<div class="col-xs-12 box-content-chart">
+								<h2 class="text-info">200,000,000vnđ</h2>
+								<p class="text-muted">hiện tại</p>
+								<i class="fa fa-bar-chart"></i>
+							</div>
+							<div class="col-xs-12 up-down ">
+								<i class="fa fa-arrow-up"></i><strong>Tăng 3%</strong>  so với tuần qua
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="block chart-box">
+						<h4 class="box-title-chart">Tổng giá trị nhập</h4>
+						<div class="row">
+							<div class="col-xs-12 box-content-chart">
+								<h2 class="text-info">200,000,000vnđ</h2>
+								<p class="text-muted">hiện tại</p>
+								<i class="fa fa-bar-chart"></i>
+							</div>
+							<div class="col-xs-12 up-down ">
+								<i class="fa fa-arrow-up"></i><strong>Tăng 3%</strong>  so với tuần qua
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="block chart-box">
+						<h4 class="box-title-chart">Tổng giá trị xuất</h4>
+						<div class="row">
+							<div class="col-xs-12 box-content-chart">
+								<h2 class="text-info">200,000,000vnđ</h2>
+								<p class="text-muted">hiện tại</p>
+								<i class="fa fa-bar-chart"></i>
+							</div>
+							<div class="col-xs-12 up-down ">
+								<i class="fa fa-arrow-up"></i><strong>Tăng 3%</strong>  so với tuần qua
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="block chart-box">
+						<h4 class="box-title-chart">Tổng lợi nhuận</h4>
+						<div class="row">
+							<div class="col-xs-12 box-content-chart">
+								<h2 class="text-info">200,000,000vnđ</h2>
+								<p class="text-muted">hiện tại</p>
+								<i class="fa fa-bar-chart"></i>
+							</div>
+							<div class="col-xs-12 up-down ">
+								<i class="fa fa-arrow-up"></i><strong>Tăng 3%</strong>  so với tuần qua
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-12 col-sm-12">
+					<div class="row">
+						<div class="col-lg-12 col-sm-6 col-xs-12  ">
+							<div class="block">
+								<h4 class="box-title-chart">3 sản phẩm xuất kho nhiều nhất</h4>
+								<div class="row">
+									<div class="col-sm-8 col-sm-offset-2 col-xs-8">
+										<div class="chart-canvas">
+											<canvas id="report-selling" data-label="#label-report-selling"  style="height: 248px"></canvas>
+										</div>
+									</div>
+									<div class="chart-labels" id="label-report-selling"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-12 col-sm-6 col-xs-12">
+							<div class="block">
+								<h4 class="box-title-chart">3 sản phẩm tồn kho nhiều nhất</h4>
+								<div class="row">
+									<div class="col-sm-8 col-sm-offset-2 col-xs-8">
+										<div class="chart-canvas">
+											<canvas id="report-inventory" data-label="#label-report-inventory"  style="height: 248px"></canvas>
+										</div>
+									</div>
+									<div class="chart-labels" id="label-report-inventory"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-lg-8 col-md-12 col-sm-12">
+					<div class="block">
+						<h4 class="box-title-chart">Số lượng sản phẩm nhập/xuất kho
+							<div class="inline-block block-daterange pull-right">
+								<input type="text" class="form-control text-center" name="daterange" value="01/01/2015 - 01/31/2015" />
+							</div>
+						</h4>
+						<canvas id="report-export" style="height:580px"></canvas>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 col-sm-12">
+					<div class="block">
+						<h4 class="box-title-chart">Tồn kho sản phẩm
+							<a href="result-check-warehouses.html" class="btn btn-ani pull-right txt-danger">Chi tiết</a>
+						</h4>
+						<div class="table-mobile ">
+							<table class="tbl-short table tbl-report" style="margin: 0;">
+								<thead>
+									<tr >
+										<th>STT</th>
+										<th>Mã sản phẩm</th>
+										<th>Tên sản phẩm</th>
+										<th>Số dư đầu kì</th>
+										<th>SL nhập</th>
+										<th>SL xuất</th>
+										<th>Số dư cuối kì</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr >
+										<td>1</td>
+										<td data-show="Mã sản phẩm:">
+											BHOL1710_00001
+											<span class="toggle-trigger"></span>
+										</td>
+										<td data-title="Tên sản phẩm:">ABC</td>
+										<td data-title="Số dư đầu kì:">12</td>
+										<td data-title="Số lượng nhập:">1</td>
+										<td data-title="Số lượng xuất:">2</td>
+										<td data-title="Số dư cuối kì:">11</td>
+									</tr>
+									<tr >
+										<td>1</td>
+										<td data-show="Mã sản phẩm:">
+											BHOL1710_00001
+											<span class="toggle-trigger"></span>
+										</td>
+										<td data-title="Tên sản phẩm:">ABC</td>
+										<td data-title="Số dư đầu kì:">12</td>
+										<td data-title="Số lượng nhập:">1</td>
+										<td data-title="Số lượng xuất:">2</td>
+										<td data-title="Số dư cuối kì:">11</td>
+									</tr>
+									<tr >
+										<td>1</td>
+										<td data-show="Mã sản phẩm:">
+											BHOL1710_00001
+											<span class="toggle-trigger"></span>
+										</td>
+										<td data-title="Tên sản phẩm:">ABC</td>
+										<td data-title="Số dư đầu kì:">12</td>
+										<td data-title="Số lượng nhập:">1</td>
+										<td data-title="Số lượng xuất:">2</td>
+										<td data-title="Số dư cuối kì:">11</td>
+									</tr>
+									<tr >
+										<td>1</td>
+										<td data-show="Mã sản phẩm:">
+											BHOL1710_00001
+											<span class="toggle-trigger"></span>
+										</td>
+										<td data-title="Tên sản phẩm:">ABC</td>
+										<td data-title="Số dư đầu kì:">12</td>
+										<td data-title="Số lượng nhập:">1</td>
+										<td data-title="Số lượng xuất:">2</td>
+										<td data-title="Số dư cuối kì:">11</td>
+									</tr>
+									<tr >
+										<td>1</td>
+										<td data-show="Mã sản phẩm:">
+											BHOL1710_00001
+											<span class="toggle-trigger"></span>
+										</td>
+										<td data-title="Tên sản phẩm:">ABC</td>
+										<td data-title="Số dư đầu kì:">12</td>
+										<td data-title="Số lượng nhập:">1</td>
+										<td data-title="Số lượng xuất:">2</td>
+										<td data-title="Số dư cuối kì:">11</td>
+									</tr>
+									<tr >
+										<td>1</td>
+										<td data-show="Mã sản phẩm:">
+											BHOL1710_00001
+											<span class="toggle-trigger"></span>
+										</td>
+										<td data-title="Tên sản phẩm:">ABC</td>
+										<td data-title="Số dư đầu kì:">12</td>
+										<td data-title="Số lượng nhập:">1</td>
+										<td data-title="Số lượng xuất:">2</td>
+										<td data-title="Số dư cuối kì:">11</td>
+									</tr>
+									<tr >
+										<td>1</td>
+										<td data-show="Mã sản phẩm:">
+											BHOL1710_00001
+											<span class="toggle-trigger"></span>
+										</td>
+										<td data-title="Tên sản phẩm:">ABC</td>
+										<td data-title="Số dư đầu kì:">12</td>
+										<td data-title="Số lượng nhập:">1</td>
+										<td data-title="Số lượng xuất:">2</td>
+										<td data-title="Số dư cuối kì:">11</td>
+									</tr>
+									<tr >
+										<td>1</td>
+										<td data-show="Mã sản phẩm:">
+											BHOL1710_00001
+											<span class="toggle-trigger"></span>
+										</td>
+										<td data-title="Tên sản phẩm:">ABC</td>
+										<td data-title="Số dư đầu kì:">12</td>
+										<td data-title="Số lượng nhập:">1</td>
+										<td data-title="Số lượng xuất:">2</td>
+										<td data-title="Số dư cuối kì:">11</td>
+									</tr>
+
+									<tr >
+										<td>1</td>
+										<td data-show="Mã sản phẩm:">
+											BHOL1710_00001
+											<span class="toggle-trigger"></span>
+										</td>
+										<td data-title="Tên sản phẩm:">ABC</td>
+										<td data-title="Số dư đầu kì:">12</td>
+										<td data-title="Số lượng nhập:">1</td>
+										<td data-title="Số lượng xuất:">2</td>
+										<td data-title="Số dư cuối kì:">11</td>
+									</tr>
+									<tr >
+										<td>10</td>
+										<td data-show="Mã sản phẩm:">
+											BHOL1710_00001
+											<span class="toggle-trigger"></span>
+										</td>
+										<td data-title="Tên sản phẩm:">ABC</td>
+										<td data-title="Số dư đầu kì:">12</td>
+										<td data-title="Số lượng nhập:">1</td>
+										<td data-title="Số lượng xuất:">2</td>
+										<td data-title="Số dư cuối kì:">11</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12">
+					<div class="block">
+						<h4 class="box-title-chart">Lô hàng gần hết hạng
+							<a href="result-check-warehouses.html" class="btn btn-ani pull-right txt-danger">Chi tiết</a>
+						</h4>
+						<div class="report-list">
+							<a href="#">
+								<div class="product-img">
+									<img src="resources/images/products/1.jpg" alt="product-image" class="img-circle">
+								</div>
+								<div class="product-content">
+									<h5 class="name">it again on the same canvas second time the</h5>
+									<p class="number">Số lượng còn: <strong>120/lon</strong></p>
+									<p class="time">Ngày hết hạn: <strong >14/03/2018</strong></p>
+								</div>
+							</a>
+							<a href="#">
+								<div class="product-img">
+									<img src="resources/images/products/1.jpg" alt="product-image" class="img-circle">
+								</div>
+								<div class="product-content">
+									<h5 class="name">you can avoid destroying and use update</h5>
+									<p class="number">Số lượng còn: <strong>120/lon</strong></p>
+									<p class="time">Ngày hết hạn: <strong >14/03/2018</strong></p>
+								</div>
+							</a>
+							<a href="#">
+								<div class="product-img">
+									<img src="resources/images/products/1.jpg" alt="product-image" class="img-circle">
+								</div>
+								<div class="product-content">
+									<h5 class="name">Nước giải khát Pepsi</h5>
+									<p class=" number">Số lượng còn: <strong>120/lon</strong></p>
+									<p class="time">Ngày hết hạn: <strong >14/03/2018</strong></p>
+								</div>
+							</a>
+							<a href="#">
+								<div class="product-img">
+									<img src="resources/images/products/1.jpg" alt="product-image" class="img-circle">
+								</div>
+								<div class="product-content">
+									<h5 class="name">you can avoid destroying and use update</h5>
+									<p class="number">Số lượng còn: <strong>120/lon</strong></p>
+									<p class="time">Ngày hết hạn: <strong >14/03/2018</strong></p>
+								</div>
+							</a>
+							<a href="#">
+								<div class="product-img">
+									<img src="resources/images/products/1.jpg" alt="product-image" class="img-circle">
+								</div>
+								<div class="product-content">
+									<h5 class="name"> it again on the same canvas second time the </h5>
+									<p class="number">Số lượng còn: <strong>120/lon</strong></p>
+									<p class="time">Ngày hết hạn: <strong >14/03/2018</strong></p>
+								</div>
+							</a>
+							<a href="#">
+								<div class="product-img">
+									<img src="resources/images/products/1.jpg" alt="product-image" class="img-circle">
+								</div>
+								<div class="product-content">
+									<h5 class="name">Nước giải khát Pepsi</h5>
+									<p class="number">Số lượng còn: <strong>120/lon</strong></p>
+									<p class="time">Ngày hết hạn: <strong >14/03/2018</strong></p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<a href="#" class="scrollup"><span class="fa fa-arrow-circle-up"></span></a>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>
+<!-- plugin -->
+<script src="resources/vendor/bootstrap/js/jquery.min.js"></script>
+<script src="resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="resources/vendor/vue/vue.js"></script>
+<script src="resources/vendor/moment/moment.min.js"></script>
+<script src="resources/vendor/daterangepicker/daterangepicker.js"></script>
+<script src="resources/vendor/chartjs/chart.min.js"></script>
+<script src="resources/vendor/jquery-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- wave  Js -->
+<script src="resources/vendor/waves/waves.min.js"></script>
+<script src="resources/vendor/select2/js/select2.full.min.js"></script>
+<script src="resources/js/erp_plugin.js"></script>
+<script src="resources/js/erp_helper.js"></script>
+<script src="resources/js/helper.js"></script>
+<script src="resources/js/report-warehouses.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	//  responsive mobile
+	$('.table-mobile .toggle-trigger').on('click',function(){
+		$(this).closest('tr').toggleClass('expand');
+	});
+});
+
+</script>
+</body>
+</html>

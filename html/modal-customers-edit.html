@@ -1,0 +1,578 @@
+<div class="modal-dialog modal-lg-90 modal-customers-edit" role="document">
+   <div class="modal-content">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <h4 class="modal-title" id="myModalLabel"><span class="ion-ios-personadd"></span>&nbsp; Thông tin khách hàng</h4>
+      </div>
+      <div class="modal-body">
+         <div class="row row-flex">
+            <div class="col-xs-12 col-sm-6 col-md-4 left-block">
+               <div class="form-horizontal">
+                  <div class="row custom-info">
+                    <div class="col-xs-4">
+                      <p>ĐƠN HÀNG</p>
+                      <h3>15</h3>
+                    </div>
+                    <div class="col-xs-4">
+                      <p>GIÁ TRỊ</p>
+                      <h3>12.400.000</h3>
+                    </div>
+                    <div class="col-xs-4">
+                      <p>TÍCH LŨY</p>
+                      <h3>150</h3>
+                    </div>
+                  </div>
+                  <div class="form-group mg-top-15">
+                     <label for="inputEmail3" class="col-sm-4 control-label">Nhóm khách hàng</label>
+                     <div class="col-sm-8">
+                        <select name="" id="" class="form-control">
+                           <option value="">-- Chọn nhóm khách hàng --</option>
+                           <option value="">Khách hàng lẻ</option>
+                           <option value="">Khách sỉ</option>
+                           <option value="">Khách VIP</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="inputEmail3" class="col-sm-4 control-label">Giới tính</label>
+                     <div class="col-sm-8">
+                        <div class="btn-group">
+                           <button type="button" class="btn btn-sm  btn-info">Nam</button>
+                           <button type="button" class="btn btn-sm  btn-default">Nữ</button>
+                           <button type="button" class="btn btn-sm  btn-default">Khác</button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="inputEmail3" class="col-sm-4 control-label">Tên khách hàng</label>
+                     <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="Ví dụ : Nguyễn Thị Hoa">
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="inputEmail3" class="col-sm-4 control-label">Số điện thoại</label>
+                     <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="Ví dụ : 0121.416.0374">
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="inputEmail3" class="col-sm-4 control-label">Địa chỉ khách hàng</label>
+                     <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="Ví dụ : 21 Lê Trung Nghĩa, phường 15, quận Tân Bình, TPHCM.">
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="inputEmail3" class="col-sm-4 control-label">Kênh bán hàng</label>
+                     <div class="col-sm-8">
+                        <select name="" id="" class="form-control">
+                           <option value="">-- Chọn kênh bán hàng --</option>
+                           <option value="">POS</option>
+                           <option value="">Online</option>
+                           <option value="">MT</option>
+                           <option value="">GT</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="inputEmail3" class="col-sm-4 control-label">Nhân viên quản lý</label>
+                     <div class="col-sm-8">
+                        <select name="" id="" class="form-control">
+                           <option value="">-- Chọn nhân viên bán hàng --</option>
+                           <option value="">Nguyễn Văn Nam</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="inputEmail3" class="col-sm-4 control-label"></label>
+                     <div class="col-sm-8">
+                        <label><input type="checkbox"> Đánh dấu khách hàng quan trọng</label>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="inputEmail3" class="col-sm-4 control-label"></label>
+                     <div class="col-sm-8">
+                        <button type="button" class="btn btn-success"><i class="fa fa-check"></i> Cập nhật thông tin</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-8 right-block">
+               <div class="block-info">
+                 <!-- Nav tabs -->
+                 <ul class="nav nav-tabs" role="tablist">
+                   <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Lịch sử mua hàng</a></li>
+                   <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Lịch sử tư vấn</a></li>
+                   <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Lịch sử nhắn tin SMS</a></li>
+                   <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Lịch sử nhắn tin FB</a></li>
+                 </ul>
+                 <!-- Tab panes -->
+                 <div class="tab-content">
+                   <div role="tabpanel" class="tab-pane history-order active" id="home">
+                      <table class="table">
+                        <thead>
+                           <tr >
+                              <th>STT</th>
+                              <th>Mã đơn hàng</th>
+                              <th>Ngày đặt hàng</th>
+                              <th>Giá trị</th>
+                              <th>Chi nhánh bán</th>
+                              <th>Thanh toán</th>
+                              <th>Nhân viên bán hàng</th>
+                              <th>Trạng thái</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>1</td>
+                              <td>BHOL1710_00001</td>
+                              <td>17/10/2017</td>
+                              <td>1.000.000</td>
+                              <td>21 Lê Trung Nghĩa</td>
+                              <td>Banks Transfer</td>
+                              <td>Thư Nguyễn</td>
+                              <td>Đơn hàng nháp</td>
+                           </tr>
+                           <tr>
+                              <td>1</td>
+                              <td>BHOL1710_00001</td>
+                              <td>17/10/2017</td>
+                              <td>1.000.000</td>
+                              <td>21 Lê Trung Nghĩa</td>
+                              <td>COD - Cash On Delivery</td>
+                              <td>Thư Nguyễn</td>
+                              <td>Kho đang xử lý</td>
+                           </tr>
+                           <tr>
+                              <td>1</td>
+                              <td>BHOL1710_00001</td>
+                              <td>17/10/2017</td>
+                              <td>1.000.000</td>
+                              <td>21 Lê Trung Nghĩa</td>
+                              <td>Banks Transfer</td>
+                              <td>Thư Nguyễn</td>
+                              <td>Đơn hàng nháp</td>
+                           </tr>
+                           <tr>
+                              <td>1</td>
+                              <td>BHOL1710_00001</td>
+                              <td>17/10/2017</td>
+                              <td>1.000.000</td>
+                              <td>21 Lê Trung Nghĩa</td>
+                              <td>COD - Cash On Delivery</td>
+                              <td>Thư Nguyễn</td>
+                              <td>Kho đang xử lý</td>
+                           </tr>
+                           <tr>
+                              <td>1</td>
+                              <td>BHOL1710_00001</td>
+                              <td>17/10/2017</td>
+                              <td>1.000.000</td>
+                              <td>21 Lê Trung Nghĩa</td>
+                              <td>Banks Transfer</td>
+                              <td>Thư Nguyễn</td>
+                              <td>Đơn hàng nháp</td>
+                           </tr>
+                           <tr>
+                              <td>1</td>
+                              <td>BHOL1710_00001</td>
+                              <td>17/10/2017</td>
+                              <td>1.000.000</td>
+                              <td>21 Lê Trung Nghĩa</td>
+                              <td>COD - Cash On Delivery</td>
+                              <td>Thư Nguyễn</td>
+                              <td>Kho đang xử lý</td>
+                           </tr>
+                           <tr>
+                              <td>1</td>
+                              <td>BHOL1710_00001</td>
+                              <td>17/10/2017</td>
+                              <td>1.000.000</td>
+                              <td>21 Lê Trung Nghĩa</td>
+                              <td>Banks Transfer</td>
+                              <td>Thư Nguyễn</td>
+                              <td>Đơn hàng nháp</td>
+                           </tr>
+                           <tr>
+                              <td>1</td>
+                              <td>BHOL1710_00001</td>
+                              <td>17/10/2017</td>
+                              <td>1.000.000</td>
+                              <td>21 Lê Trung Nghĩa</td>
+                              <td>COD - Cash On Delivery</td>
+                              <td>Thư Nguyễn</td>
+                              <td>Kho đang xử lý</td>
+                           </tr>
+                           <tr>
+                              <td>1</td>
+                              <td>BHOL1710_00001</td>
+                              <td>17/10/2017</td>
+                              <td>1.000.000</td>
+                              <td>21 Lê Trung Nghĩa</td>
+                              <td>Banks Transfer</td>
+                              <td>Thư Nguyễn</td>
+                              <td>Đơn hàng nháp</td>
+                           </tr>
+                           <tr>
+                              <td>1</td>
+                              <td>BHOL1710_00001</td>
+                              <td>17/10/2017</td>
+                              <td>1.000.000</td>
+                              <td>21 Lê Trung Nghĩa</td>
+                              <td>COD - Cash On Delivery</td>
+                              <td>Thư Nguyễn</td>
+                              <td>Kho đang xử lý</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                   </div>
+                   <div role="tabpanel" class="tab-pane history-consulting" id="profile">
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="col-xs-12">
+                              <div class="employer">
+                                 <div class="employer-media">
+                                    <img src="resources/images/thumnails/thumbnail.jpg" alt="" class="img-circle img-responsive">
+                                 </div>
+                                 <div class="employer-info">
+                                    <div class="inline-block">
+                                       <p class="author">
+                                          <b>Nguyễn Thị Anh Thư</b>
+                                          <br>
+                                          <span>Nhân viên telesale</span>
+                                       </p>
+                                    </div>
+                                    <div class="inline-block pull-right">
+                                       <div class="time">
+                                          (<small>2 ngày trước</small>)
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="col-xs-12">
+                              <div class="employer">
+                                 <div class="employer-media">
+                                    <img src="resources/images/thumnails/thumbnail.jpg" alt="" class="img-circle img-responsive">
+                                 </div>
+                                 <div class="employer-info">
+                                    <div class="inline-block">
+                                       <p class="author">
+                                          <b>Nguyễn Thị Anh Thư</b>
+                                          <br>
+                                          <span>Nhân viên telesale</span>
+                                       </p>
+                                    </div>
+                                    <div class="inline-block pull-right">
+                                       <div class="time">
+                                          (<small>2 ngày trước</small>)
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="col-xs-12">
+                              <div class="employer">
+                                 <div class="employer-media">
+                                    <img src="resources/images/thumnails/thumbnail.jpg" alt="" class="img-circle img-responsive">
+                                 </div>
+                                 <div class="employer-info">
+                                    <div class="inline-block">
+                                       <p class="author">
+                                          <b>Nguyễn Thị Anh Thư</b>
+                                          <br>
+                                          <span>Nhân viên telesale</span>
+                                       </p>
+                                    </div>
+                                    <div class="inline-block pull-right">
+                                       <div class="time">
+                                          (<small>2 ngày trước</small>)
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="col-xs-12">
+                              <div class="employer">
+                                 <div class="employer-media">
+                                    <img src="resources/images/thumnails/thumbnail.jpg" alt="" class="img-circle img-responsive">
+                                 </div>
+                                 <div class="employer-info">
+                                    <div class="inline-block">
+                                       <p class="author">
+                                          <b>Nguyễn Thị Anh Thư</b>
+                                          <br>
+                                          <span>Nhân viên telesale</span>
+                                       </p>
+                                    </div>
+                                    <div class="inline-block pull-right">
+                                       <div class="time">
+                                          (<small>2 ngày trước</small>)
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="col-xs-12">
+                              <div class="employer">
+                                 <div class="employer-media">
+                                    <img src="resources/images/thumnails/thumbnail.jpg" alt="" class="img-circle img-responsive">
+                                 </div>
+                                 <div class="employer-info">
+                                    <div class="inline-block">
+                                       <p class="author">
+                                          <b>Nguyễn Thị Anh Thư</b>
+                                          <br>
+                                          <span>Nhân viên telesale</span>
+                                       </p>
+                                    </div>
+                                    <div class="inline-block pull-right">
+                                       <div class="time">
+                                          (<small>2 ngày trước</small>)
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="col-xs-12">
+                              <div class="employer">
+                                 <div class="employer-media">
+                                    <img src="resources/images/thumnails/thumbnail.jpg" alt="" class="img-circle img-responsive">
+                                 </div>
+                                 <div class="employer-info">
+                                    <div class="inline-block">
+                                       <p class="author">
+                                          <b>Nguyễn Thị Anh Thư</b>
+                                          <br>
+                                          <span>Nhân viên telesale</span>
+                                       </p>
+                                    </div>
+                                    <div class="inline-block pull-right">
+                                       <div class="time">
+                                          (<small>2 ngày trước</small>)
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="col-xs-12">
+                              <div class="employer">
+                                 <div class="employer-media">
+                                    <img src="resources/images/thumnails/thumbnail.jpg" alt="" class="img-circle img-responsive">
+                                 </div>
+                                 <div class="employer-info">
+                                    <div class="inline-block">
+                                       <p class="author">
+                                          <b>Nguyễn Thị Anh Thư</b>
+                                          <br>
+                                          <span>Nhân viên telesale</span>
+                                       </p>
+                                    </div>
+                                    <div class="inline-block pull-right">
+                                       <div class="time">
+                                          (<small>2 ngày trước</small>)
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="save-box save-history-consulting">
+                       <textarea name="" rows="2" class="form-control" placeholder="Nhập thông tin tư vấn / ghi chú tư vấn ..."></textarea>
+                       <button class="btn btn-default"><span class="ion-ios-paperplane"></span></button>
+                     </div>
+                   </div>
+                   <div role="tabpanel" class="tab-pane history-sendsms" id="messages">
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="mg-bottom-10 col-xs-12">
+                              <div class="inline-block">
+                                 <p class="author"><b>Chiến dịch quảng cáo 20/10</b><br><span class="label label-success">Tổng đài tin nhắn : 9382</span></p>
+                              </div>
+                              <div class="inline-block pull-right">
+                                 <p class="timer">(<small>2 ngày trước</small>)</p>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Nhan dip ra mat ERP Software moi, TOP chiet khau 30% toan bo san pham tu ngay 20-22/10. Dac biet Quy Khach den mua hang se nhan duoc mot phan qua hap dan cua shop. Dia chi : 21 Le Trung Nghia, phuong 15, quan Tan Binh, TPHCM. Chi tiet xem tai: polarisvietnam.com</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="mg-bottom-10 col-xs-12">
+                              <div class="inline-block">
+                                 <p class="author"><b>Chiến dịch quảng cáo 20/10</b><br><span class="label label-success">Tổng đài tin nhắn : 9382</span></p>
+                              </div>
+                              <div class="inline-block pull-right">
+                                 <p class="timer">(<small>2 ngày trước</small>)</p>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Nhan dip ra mat ERP Software moi, TOP chiet khau 30% toan bo san pham tu ngay 20-22/10. Dac biet Quy Khach den mua hang se nhan duoc mot phan qua hap dan cua shop. Dia chi : 21 Le Trung Nghia, phuong 15, quan Tan Binh, TPHCM. Chi tiet xem tai: polarisvietnam.com</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="mg-bottom-10 col-xs-12">
+                              <div class="inline-block">
+                                 <p class="author"><b>Chiến dịch quảng cáo 20/10</b><br><span class="label label-success">Tổng đài tin nhắn : 9382</span></p>
+                              </div>
+                              <div class="inline-block pull-right">
+                                 <p class="timer">(<small>2 ngày trước</small>)</p>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Nhan dip ra mat ERP Software moi, TOP chiet khau 30% toan bo san pham tu ngay 20-22/10. Dac biet Quy Khach den mua hang se nhan duoc mot phan qua hap dan cua shop. Dia chi : 21 Le Trung Nghia, phuong 15, quan Tan Binh, TPHCM. Chi tiet xem tai: polarisvietnam.com</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="mg-bottom-10 col-xs-12">
+                              <div class="inline-block">
+                                 <p class="author"><b>Chiến dịch quảng cáo 20/10</b><br><span class="label label-success">Tổng đài tin nhắn : 9382</span></p>
+                              </div>
+                              <div class="inline-block pull-right">
+                                 <p class="timer">(<small>2 ngày trước</small>)</p>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Nhan dip ra mat ERP Software moi, TOP chiet khau 30% toan bo san pham tu ngay 20-22/10. Dac biet Quy Khach den mua hang se nhan duoc mot phan qua hap dan cua shop. Dia chi : 21 Le Trung Nghia, phuong 15, quan Tan Binh, TPHCM. Chi tiet xem tai: polarisvietnam.com</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="mg-bottom-10 col-xs-12">
+                              <div class="inline-block">
+                                 <p class="author"><b>Chiến dịch quảng cáo 20/10</b><br><span class="label label-success">Tổng đài tin nhắn : 9382</span></p>
+                              </div>
+                              <div class="inline-block pull-right">
+                                 <p class="timer">(<small>2 ngày trước</small>)</p>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Nhan dip ra mat ERP Software moi, TOP chiet khau 30% toan bo san pham tu ngay 20-22/10. Dac biet Quy Khach den mua hang se nhan duoc mot phan qua hap dan cua shop. Dia chi : 21 Le Trung Nghia, phuong 15, quan Tan Binh, TPHCM. Chi tiet xem tai: polarisvietnam.com</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="mg-bottom-10 col-xs-12">
+                              <div class="inline-block">
+                                 <p class="author"><b>Chiến dịch quảng cáo 20/10</b><br><span class="label label-success">Tổng đài tin nhắn : 9382</span></p>
+                              </div>
+                              <div class="inline-block pull-right">
+                                 <p class="timer">(<small>2 ngày trước</small>)</p>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Nhan dip ra mat ERP Software moi, TOP chiet khau 30% toan bo san pham tu ngay 20-22/10. Dac biet Quy Khach den mua hang se nhan duoc mot phan qua hap dan cua shop. Dia chi : 21 Le Trung Nghia, phuong 15, quan Tan Binh, TPHCM. Chi tiet xem tai: polarisvietnam.com</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="mg-bottom-10 col-xs-12">
+                              <div class="inline-block">
+                                 <p class="author"><b>Chiến dịch quảng cáo 20/10</b><br><span class="label label-success">Tổng đài tin nhắn : 9382</span></p>
+                              </div>
+                              <div class="inline-block pull-right">
+                                 <p class="timer">(<small>2 ngày trước</small>)</p>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Nhan dip ra mat ERP Software moi, TOP chiet khau 30% toan bo san pham tu ngay 20-22/10. Dac biet Quy Khach den mua hang se nhan duoc mot phan qua hap dan cua shop. Dia chi : 21 Le Trung Nghia, phuong 15, quan Tan Binh, TPHCM. Chi tiet xem tai: polarisvietnam.com</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="mg-bottom-10 col-xs-12">
+                              <div class="inline-block">
+                                 <p class="author"><b>Chiến dịch quảng cáo 20/10</b><br><span class="label label-success">Tổng đài tin nhắn : 9382</span></p>
+                              </div>
+                              <div class="inline-block pull-right">
+                                 <p class="timer">(<small>2 ngày trước</small>)</p>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Nhan dip ra mat ERP Software moi, TOP chiet khau 30% toan bo san pham tu ngay 20-22/10. Dac biet Quy Khach den mua hang se nhan duoc mot phan qua hap dan cua shop. Dia chi : 21 Le Trung Nghia, phuong 15, quan Tan Binh, TPHCM. Chi tiet xem tai: polarisvietnam.com</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item bs-callout bs-callout-info">
+                        <div class="row">
+                           <div class="mg-bottom-10 col-xs-12">
+                              <div class="inline-block">
+                                 <p class="author"><b>Chiến dịch quảng cáo 20/10</b><br><span class="label label-success">Tổng đài tin nhắn : 9382</span></p>
+                              </div>
+                              <div class="inline-block pull-right">
+                                 <p class="timer">(<small>2 ngày trước</small>)</p>
+                              </div>
+                           </div>
+                           <div class="col-xs-12">
+                              <div class="introtext">Nhan dip ra mat ERP Software moi, TOP chiet khau 30% toan bo san pham tu ngay 20-22/10. Dac biet Quy Khach den mua hang se nhan duoc mot phan qua hap dan cua shop. Dia chi : 21 Le Trung Nghia, phuong 15, quan Tan Binh, TPHCM. Chi tiet xem tai: polarisvietnam.com</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="save-box save-history-consulting">
+                       <textarea name="" rows="2" class="form-control" placeholder="Nhập nội dung tin nhắn SMS để gửi đến khách hàng ..."></textarea>
+                       <button class="btn btn-default"><span class="ion-ios-paperplane"></span></button>
+                     </div>
+                   </div>
+                   <div role="tabpanel" class="tab-pane history-sendmessage" id="settings">...</div>
+                 </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

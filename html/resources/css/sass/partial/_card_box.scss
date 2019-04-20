@@ -1,0 +1,14 @@
+/* Card Box */
+.card-box{
+  padding: 20px;
+  border: 1px solid $light;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  background-color: $white;
+  .details_order{
+    margin:0;
+  }
+}
+.card-header {
+  background-color: lighten($light3,10%);
+}

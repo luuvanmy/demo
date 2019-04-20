@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Xử lý đơn hàng</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+	<!-- plugin -->
+	<link rel="stylesheet" href="resources/vendor/bootstrap/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="resources/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="resources/vendor/ionicons/css/ionicons.min.css">
+	<link rel="stylesheet" href="resources/vendor/daterangepicker/daterangepicker.css">
+	<!-- wave Css -->
+	<link rel="stylesheet" href="resources/vendor/waves/waves.min.css" />
+	<link rel="stylesheet" href="resources/vendor/select2/css/select2.min.css">
+	<!-- custom -->
+	<link rel="stylesheet" href="resources/css/module.css">
+	<link rel="stylesheet" href="resources/css/styles.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-menu">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed menu-toggle" >
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand logo  hidden-xs" href="index.html">
+					<span class="logo-icon">
+						<img src="resources/images/logo/logo-1.png" alt="" class="img-responsive pull-left img-logo">
+					</span>
+					<span class="logo-text">
+						<h2>POLARIS</h2>
+						<p>Your success - Our mission</p>
+					</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="account">
+						<div class="dropdown">
+							<img src="resources/images/thumnails/50x50.png" data-toggle="dropdown"  alt="" class="img-responsive img-circle">
+							<a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Xin chào <b>Admin</b><br><small>Web developers</small> <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Thông tin tài khoản</a></li>
+								<li><a href="#">Lịch sử hoạt động</a></li>
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-center">
+					<li class="active"><a href="" ><i class="material-icons">work</i> &nbsp; <span>Quản lý bán hàng</span></a>
+						<ul>
+							<li ><a href="index.html" >Đơn hàng</a></li>
+							<li><a href="customers.html">Khách hàng</a></li>
+							<li><a href="#">Chính sách giá bán</a></li>
+							<li><a href="report-sales.html">Báo cáo</a></li>
+							<li><a href="#">Cấu hình chung</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="material-icons">account_balance</i> &nbsp; Quản lý kho hàng</a>
+						<ul>
+							<li><a href="products.html" class="active">Sản phẩm</a></li>
+							<li><a href="export-warehouses.html">Xuất kho</a></li>
+							<li><a href="import-warehouses.html">Nhập kho</a></li>
+							<li><a href="export-warehouses.html">Lưu chuyển kho</a></li>
+							<li><a href="report-warehouses.html">Báo cáo xuất/nhập tồn</a></li>
+							<li><a href="check-warehouses.html">Kiểm kho</a></li>
+							<li><a href="#">Cấu hình chung</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="material-icons">supervisor_account</i> &nbsp; Quản lý nhân sự</a>
+						<ul>
+							<li><a href="#" class="active">Nhân sự / nhóm nhân sự</a></li>
+							<li><a href="#">Chấm công</a></li>
+							<li><a href="#">Chính sách lương/thưởng</a></li>
+							<li><a href="#">Chính sách KPI</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="material-icons">help_outline</i> &nbsp; Hỗ trợ sử dụng</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="content add_order_content mg-top-70">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="page-title-box">
+						<div class="btn-group pull-right">
+							<ol class="breadcrumb hide-phone p-0 m-0">
+								<li class="breadcrumb-item"><a href="#">Quản lý kho hàng</a></li>
+								<li class="breadcrumb-item active">Kiểm kho</li>
+							</ol>
+						</div>
+						<h4 class="page-title pd-top-10" >Kiểm kho</h4>
+					</div>
+				</div>
+			</div>
+			<div class="card-box">
+				<div class="add_order" id="add-order">
+					<div class="details_order">
+						<div class="tab_list_order">
+							<ul class="nav nav-tabs">
+								<li v-for="(tab , index) in listTab" :class="{'active': activeTab == index}">
+									<a href="#" @click.stop.prevent="changeTab(index)">
+										<span>HD0000012313213</span>
+										<i class="btn-remove-tab glyphicon glyphicon-remove" @click="removeTab(index)"></i>
+									</a>
+								</li>
+								<button type="button" class="btn btn-default" @click="addTab">
+									<i class="fa fa-plus"></i>
+								</button>
+							</ul>
+						</div>
+						<div class="option-info-order mg-top-10">
+							<div class="row">
+								<div class="col-xs-12 col-md-8">
+									<button type="button" class="btn btn-default mg-bottom-5" onclick="load_data_to_modal(this,'#myModal')" data-url='modal-scan-barcode.html'><i class="fa fa-barcode" aria-hidden="true"></i> Quét mã Barcode</button>
+									<button type="button" class="btn btn-default mg-bottom-5" onclick="load_data_to_modal(this,'#myModal')" data-url='modal-find-products.html'><i class="fa fa-mouse-pointer" aria-hidden="true"></i> Tự chọn sản phẩm</button>
+									<a onclick="load_data_to_modal(this,'#myModal')" data-url="modal-products-search.html" class="btn mg-bottom-5 btn-primary mg-left-5"><i class="fa fa-search"></i>&nbsp;Tìm kiếm nâng cao</a>
+
+								</div>
+								<div class="col-xs-12 col-md-4">
+									<div class="text-right">
+										<a href="result-check-warehouses.html" class="btn  btn-info"><span class="fa fa-print"></span> &nbsp; Kiểm kho</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab_info_order mg-top-10" :class="{'show-right' : config.mobileView}">
+							<div class="tab_info_order_left" >
+								<div class="info_list">
+									<table class="table">
+										<thead>
+											<tr>
+												<th colspan="2">Sản phẩm</th>
+												<th>Số lượng</th>
+												<th>Đơn giá</th>
+												<th>Thành tiền</th>
+												<th>Thao tác</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr v-for="item in 10">
+												<td class="td-image"><img src="resources/images/products/1.jpg" class="img-responsive"></td>
+												<td class="td-info">
+													<h4>Apple iPhone 8 64GB Đen (Hàng nhập khẩu)</h4>
+													<p class="products-code"><b>Mã sản phẩm :</b> SP00001 | <b>Danh mục :</b> Điện thoại / máy tính bảng <br>
+														<b>Số lượng còn :</b> 1.000 / cái
+													</p>
+												</td>
+												<td class="td-quality">
+													<div class="input-group">
+														<span class="input-group-addon" id="basic-addon1"><span class="ion-ios-minus-empty"></span></span>
+														<input type="number" class="form-control" aria-describedby="basic-addon1" value="1">
+														<span class="input-group-addon" id="basic-addon1"><span class="ion-ios-plus-empty"></span></span>
+													</div>
+												</td>
+												<td class="td-price">
+													<input type="number" class="form-control price" value="19200000">
+													<p class="text-danger"><small>Đã giảm : 100.000đ</small></p>
+												</td>
+												<td class="td-total-price"><p class="rows-total">19.200.000đ</p></td>
+												<td class="td-action text-center"><a class="btn btn-circle btn-remove-product"><span class="fa fa-trash"></span></a></td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr class="last">
+												<td colspan="4" class="text-right">TỔNG CỘNG :</td>
+												<td colspan="2"><b>19.200.000</b>đ</td>
+											</tr>
+											<tr class="last">
+												<td colspan="4" class="text-right">GIẢM GIÁ THEO PHẦN TRĂM :</td>
+												<td colspan="2"><input type="number" class="form-control price" value="0" max="100">%</td>
+											</tr>
+											<tr class="last">
+												<td colspan="4" class="text-right">GIẢM GIÁ THEO GIÁ TRỊ :</td>
+												<td colspan="2"><input type="number" class="form-control price" value="0">đ</td>
+											</tr>
+											<tr class="last">
+												<td colspan="4" class="text-right">CHI PHÍ GIAO HÀNG :</td>
+												<td colspan="2"><input type="number" class="form-control price" value="0">đ</td>
+											</tr>
+											<tr class="last">
+												<td colspan="4" class="text-right">SỐ TIỀN PHẢI THANH TOÁN :</td>
+												<td colspan="2"><b>19.200.000</b>đ</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+							<div class="tab_info_order_right" >
+								<div class="info_order">
+									<div class="info_order_option">
+										<div class="info_order_option_title">
+											<strong>Thông tin kiểm kê</strong>
+										</div>
+										<div class="row">
+											<div class="col-xs-12 mg-bottom-15">
+												<label>Địa chỉ kho hàng</label>
+												<select  class="form-control select2 " >
+													<option value="">-- Chọn kho hàng --</option>
+													<option value="1">Alabama</option>
+													<option value="2">Amalapuram</option>
+													<option value="3">Anakapalli</option>
+													<option value="4">Akkayapalem</option>
+													<option value="5">Wyoming</option>
+												</select>
+											</div>
+											<div class="col-xs-12 mg-bottom-5">
+												<div class="checkbox checkbox-primary "><input type="checkbox" checked="checked" class="txt-payment"> <label for="checkbox2">
+														Sản phẩm cận ngày hết hạng
+													</label>
+												</div>
+											</div>
+											<div class="col-xs-12 mg-bottom-15">
+												<div class="checkbox checkbox-primary "><input type="checkbox" class="txt-payment"> <label for="checkbox2">
+														Sản phẩm lỗi / hỏng
+													</label>
+												</div>
+											</div>
+											<div class="col-xs-12 mg-bottom-15">
+												<label>Lô hàng</label>
+												<select  class="form-control select2">
+													<option value="">-- Chọn lô hàng --</option>
+													<option value="1">Alabama</option>
+													<option value="2">Amalapuram</option>
+													<option value="3">Anakapalli</option>
+													<option value="4">Akkayapalem</option>
+													<option value="5">Wyoming</option>
+												</select>
+											</div>
+											<div class="col-xs-12 mg-bottom-15  option-reason opt-warehouses hide">
+												<label>Địa chỉ kho chuyển đến</label>
+												<select  class=" select2 form-control" style="width:100%">
+													<option value="">-- Chọn kho hàng --</option>
+													<option value="1">Alabama</option>
+													<option value="2">Amalapuram</option>
+													<option value="3">Anakapalli</option>
+													<option value="4">Akkayapalem</option>
+													<option value="5">Wyoming</option>
+												</select>
+											</div>
+											<div class="col-xs-12 mg-bottom-15 option-reason  opt-supliers hide">
+												<label>Tên nhà cung cấp</label>
+												<select  class="form-control select2 "  style="width:100%">
+													<option value="">-- Chọn nhà cung cấp --</option>
+													<option value="1">Alabama</option>
+													<option value="2">Amalapuram</option>
+													<option value="3">Anakapalli</option>
+													<option value="4">Akkayapalem</option>
+													<option value="5">Wyoming</option>
+												</select>
+											</div>
+											<div class="col-xs-12 mg-bottom-15 option-reason opt-buy hide">
+												<label for="">Mã đơn hàng</label>
+												<input type="text" class="form-control" placeholder="" style="width:100%"/>
+											</div>
+											<div class="col-xs-12 mg-bottom-15">
+												<label>Ghi chú</label>
+												<textarea name="name" rows="3" cols="80"  class="form-control"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<a href="#" class="scrollup"><span class="fa fa-arrow-circle-up"></span></a>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>
+<!-- plugin -->
+<script src="resources/vendor/bootstrap/js/jquery.min.js"></script>
+<script src="resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="resources/vendor/vue/vue.js"></script>
+<script src="resources/vendor/moment/moment.min.js"></script>
+<script src="resources/vendor/daterangepicker/daterangepicker.js"></script>
+<script src="resources/vendor/chartjs/chart.min.js"></script>
+<script src="resources/vendor/jquery-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- wave  Js -->
+<script src="resources/vendor/waves/waves.min.js"></script>
+<script src="resources/vendor/select2/js/select2.full.min.js"></script>
+<script src="resources/js/erp_plugin.js"></script>
+<script src="resources/js/erp_helper.js"></script>
+<script src="resources/js/helper.js"></script>
+
+<script>
+var addOrder = new listOrderFunction('#add-order');
+function listOrderFunction(element){
+	var data = new Array(20);
+	this.vm = new Vue({
+		el : element,
+		data : {
+			config :{
+				view : 'list',
+				mobileView : false,
+			},
+			listTab : [
+				{
+					_id : 1,
+					order_id : 'HD12321321311'
+				},
+				{
+					_id : 2,
+					order_id : 'HD12321321312'
+				},
+				{
+					_id : 3,
+					order_id : 'HD12321321313'
+				}
+			],
+			activeTab : 1,
+			checkbox : [],
+		},
+		methods:{
+			changeTab(index){
+				if( !$(event.target).is('.btn-remove-tab') && this.activeTab != index){
+					this.activeTab = index;
+				}
+			},
+			removeTab(index){
+				if(this.activeTab == this.listTab.length - 1){
+					this.activeTab--;
+				}
+				this.listTab.splice(index , 1);
+
+			},
+			addTab(){
+				var object = {
+					_id : helper.createId(),
+					order_id : 'New Order',
+				}
+				this.listTab.push(object);
+				this.activeTab = this.listTab.length - 1;
+			},
+			mobileView(){
+				this.config.mobileView = !this.config.mobileView;
+			}
+		},
+	});
+	return this;
+}
+$(function(){
+	//show hide when change value
+	$(".select-export").change(function(){
+		var option = $('option:selected', this).attr('value');
+		$(".option-reason").addClass('hide');
+		$('.'+option).removeClass('hide');
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Danh sách khách hàng</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+	<!-- plugin -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="resources/vendor/bootstrap/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="resources/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="resources/vendor/ionicons/css/ionicons.min.css">
+	<link rel="stylesheet" href="resources/vendor/daterangepicker/daterangepicker.css">
+	<!-- custom -->
+	<link rel="stylesheet" href="resources/css/module.css">
+	<link rel="stylesheet" href="resources/css/styles.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-menu">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed menu-toggle" >
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand logo  hidden-xs" href="index.html">
+					<span class="logo-icon">
+						<img src="resources/images/logo/logo-1.png" alt="" class="img-responsive pull-left img-logo">
+					</span>
+					<span class="logo-text">
+						<h2>POLARIS</h2>
+						<p>Your success - Our mission</p>
+					</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="account">
+						<div class="dropdown">
+							<img src="resources/images/thumnails/50x50.png" data-toggle="dropdown"  alt="" class="img-responsive img-circle">
+							<a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Xin chào <b>Admin</b><br><small>Web developers</small> <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Thông tin tài khoản</a></li>
+								<li><a href="#">Lịch sử hoạt động</a></li>
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-center">
+					<li class="active"><a href="" ><i class="material-icons">work</i> &nbsp; <span>Quản lý bán hàng</span></a>
+						<ul>
+							<li ><a href="index.html" >Đơn hàng</a></li>
+							<li><a href="customers.html">Khách hàng</a></li>
+							<li><a href="#">Chính sách giá bán</a></li>
+							<li><a href="report-sales.html">Báo cáo</a></li>
+							<li><a href="#">Cấu hình chung</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="material-icons">account_balance</i> &nbsp; Quản lý kho hàng</a>
+						<ul>
+							<li><a href="products.html" class="active">Sản phẩm</a></li>
+							<li><a href="export-warehouses.html">Xuất kho</a></li>
+							<li><a href="import-warehouses.html">Nhập kho</a></li>
+							<li><a href="export-warehouses.html">Lưu chuyển kho</a></li>
+							<li><a href="report-warehouses.html">Báo cáo xuất/nhập tồn</a></li>
+							<li><a href="check-warehouses.html">Kiểm kho</a></li>
+							<li><a href="#">Cấu hình chung</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="material-icons">supervisor_account</i> &nbsp; Quản lý nhân sự</a>
+						<ul>
+							<li><a href="#" class="active">Nhân sự / nhóm nhân sự</a></li>
+							<li><a href="#">Chấm công</a></li>
+							<li><a href="#">Chính sách lương/thưởng</a></li>
+							<li><a href="#">Chính sách KPI</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="material-icons">help_outline</i> &nbsp; Hỗ trợ sử dụng</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="content" id="list-customer">
+		<div class="container-fluid sale_order">
+			<div class="tools">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<h3>Tổng hợp danh sách khách hàng</h3>
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<div class="branch text-right mg-top-20 mg-bottom-10">
+							<div class="inline-block">
+								<div class="daterange">
+									<div class="dropdown">
+										<button id="dLabel" type="button" class="btn btn-warning" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-map-marker"></i>&nbsp; Chi nhánh 21 Lê Trung Nghĩa <span class="caret"></span></button>
+										<ul class="dropdown-menu" aria-labelledby="dLabel">
+											<li><a href="">21 Lê Trung Nghĩa</a></li>
+											<li><a href="">21 Hai Bà Trưng</a></li>
+											<li><a href="">21 Nguyễn Thị Minh Khai</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 mg-bottom-10">
+						<a onclick="load_data_to_modal(this,'#myModal')" data-url='modal-customers-add.html' class="btn mg-bottom-5 btn-success"><i class="fa fa-plus"></i>&nbsp; Tạo khách hàng</a>
+						<a onclick="load_data_to_modal(this,'#myModal')" data-url='modal-import-order.html' class="btn mg-bottom-5 btn-success"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp; Nhập từ Excel</a>
+						<a onclick="load_data_to_modal(this,'#myModal')" data-url='modal-customers-search.html' class="btn mg-bottom-5 btn-primary"><i class="fa fa-search"></i>&nbsp;Tìm kiếm nâng cao</a>
+					</div>
+					<div class="col-xs-12 col-sm-6 mg-bottom-10 text-right">
+						<div class="inline-block mg-bottom-5 block-daterange">
+							<input type="text" class="form-control text-center" name="daterange" value="01/01/2015 - 01/31/2015" />
+						</div>
+						<div class="inline-block mg-bottom-5">
+							<a href="" class="btn btn-default"><i class="fa fa-download" aria-hidden="true"></i>&nbsp; Xuất file Excel</a>
+						</div>
+					</div>
+				</div>
+				<div class="row mg-bottom-15">
+					<div class="col-xs-12">
+						<p >Đang tìm kiếm khách hàng theo nhóm "<b>Khách hàng lẻ</b>" từ ngày <b>01/01/2015</b> đến ngày <b>01/31/2015</b>. Tìm thấy <b>15</b> / <b>1.000</b> tài liệu theo yêu cầu.</p>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+
+				<div class="view-list list-order">
+					<table class="table" >
+						<thead>
+							<tr >
+								<th><input type="checkbox"></th>
+								<th>STT</th>
+								<th></th>
+								<th>Mã khách hàng</th>
+								<th>Ngày phát sinh</th>
+								<th>Tên khách hàng</th>
+								<th>Số điện thoại</th>
+								<th>Kênh bán hàng</th>
+								<th>Khu vực</th>
+								<th>Nhân viên quản lý</th>
+								<th>Nhóm khách hàng</th>
+								<th>Nợ phải thu</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for="item in 10">
+								<td ><input type="checkbox"></td>
+								<td>1</td>
+								<th><span class="ion-ios-star" title="Đánh dấu khách hàng quan trọng" style="color:#e2b327"></span></th>
+								<td>KHOL_0000001</td>
+								<td>20/10/2017</td>
+								<td>Nguyễn Thị Hoa</td>
+								<td>0121.416.0374</td>
+								<td>Online</td>
+								<td>Hồ Chí Minh - Quận 1</td>
+								<td>Thư Nguyễn</td>
+								<td>Khách lẻ</td>
+								<td>0</td>
+								<td><a title="Xem thông tin khách hàng" onclick="load_data_to_modal(this,'#myModal')" data-url="modal-customers-edit.html"><span class="ion-ios-redo"></span></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<span class="ion-ios-arrow-thin-up"></span>
+						<span class="ion-ios-minus-empty"></span> Thao tác trên đối tượng đã chọn
+						<div class="dropdown dropdown-action">
+						  	<button id="dLabel" type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="ion-ios-redo"></i>&nbsp; Chọn thao tác thực hiện <span class="caret"></span></button>
+						  	<ul class="dropdown-menu" aria-labelledby="dLabel">
+						    	<li><a href="">Xóa khách hàng khỏi hệ thống</a></li>
+						    	<li><a href="">Xuất thông tin ra file Excel</a></li>
+						    	<li><a href="">Gửi tin nhắn SMS</a></li>
+						    	<li><a href="">Gửi tin nhắn Facebook</a></li>
+						  	</ul>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<nav class="text-right">
+						  	<ul class="pagination">
+								<li >
+									<a href="#" aria-label="Previous">
+										<span aria-hidden="true">&laquo;</span>
+									</a>
+								</li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li>
+									<a href="#" aria-label="Next">
+										<span aria-hidden="true">&raquo;</span>
+									</a>
+								</li>
+						  </ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>
+	<!-- plugin -->
+	<script src="resources/vendor/bootstrap/js/jquery.min.js"></script>
+	<script src="resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="resources/vendor/vue/vue.js"></script>
+	<script src="resources/vendor/moment/moment.min.js"></script>
+	<script src="resources/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="resources/vendor/select2/select2.min.js"></script>
+	<script src="resources/vendor/chartjs/chart.min.js"></script>
+	<script src="resources/js/erp_plugin.js"></script>
+	<script>
+		$(function(){
+			var listOrder = new listOrderFunction('#list-customer');
+		})
+		function listOrderFunction(element){
+			var data = new Array(20);
+			this.vm = new Vue({
+				el : element,
+				data : {
+					config :{
+						view : 'thumnail',
+					},
+					checkbox : [],
+				},
+			});
+			return this;
+		}
+	</script>
+</body>
+</html>
